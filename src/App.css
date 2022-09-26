@@ -10,12 +10,16 @@
 h2 {
   font-size: 54px;
 }
-input {
+input,
+button {
   font-family: inherit;
   width: 200px;
   opacity: 0.9;
   border-radius: 12px;
   text-align: center;
+}
+button {
+  width: 80px;
 }
 .top {
   display: flex;
@@ -56,4 +60,8 @@ input {
 }
 .forecast-rain img {
   height: 48px;
+}
+
+.middle {
+  text-align: center;
 }

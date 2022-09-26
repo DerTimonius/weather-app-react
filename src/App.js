@@ -57,7 +57,7 @@ function App() {
         {currentWeather && (
           <Current weather={currentWeather} className="current-component" />
         )}
-        <div>
+        <div className="middle">
           <h2>{location}</h2>
           <br />
           <form onSubmit={handleSubmit}>
@@ -67,6 +67,7 @@ function App() {
               onClick={() => setLocation('')}
               onChange={(e) => setLocation(e.currentTarget.value)}
             />
+            <button>Search</button>
           </form>
         </div>
         {weatherForecast && (
