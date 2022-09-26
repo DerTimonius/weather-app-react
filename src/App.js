@@ -10,8 +10,9 @@ function App() {
     lon: 16.373819,
     lat: 48.208174,
   });
-  const [currentWeather, setCurrentWeather] = useState();
-  const [weatherForecast, setWeatherForecast] = useState();
+  // Initialized both states with falsy values
+  const [currentWeather, setCurrentWeather] = useState('');
+  const [weatherForecast, setWeatherForecast] = useState('');
 
   const getCoordinates = async () => {
     const response = await fetch(
@@ -21,36 +22,33 @@ function App() {
     setCoordinates({ lat: data[0].lat, lon: data[0].lon });
   };
 
-  async function getCurrentWeather() {
+  async function getCurrentWeather(coor) {
     const response = await fetch(
-      `${process.env.REACT_APP_WEATHER_URL}/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`,
+      `${process.env.REACT_APP_WEATHER_URL}/weather?lat=${coor.lat}&lon=${coor.lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`,
     );
     const data = await response.json();
     setCurrentWeather(data);
   }
 
-  async function getWeatherForecast() {
+  async function getWeatherForecast(coor) {
     const response = await fetch(
-      `${process.env.REACT_APP_WEATHER_URL}/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`,
+      `${process.env.REACT_APP_WEATHER_URL}/forecast?lat=${coor.lat}&lon=${coor.lon}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`,
     );
     const data = await response.json();
     setWeatherForecast(data);
   }
 
   useEffect(() => {
-    getCurrentWeather().catch((err) => console.log(err));
-    console.log('ran');
+    getCurrentWeather(coordinates).catch((err) => console.log(err));
   }, [coordinates]);
 
   useEffect(() => {
-    getWeatherForecast().catch((err) => console.log(err));
-    console.log('also ran');
+    getWeatherForecast(coordinates).catch((err) => console.log(err));
   }, [coordinates]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     getCoordinates().catch((err) => console.log(err));
-    console.log('happened');
   };
 
   return (

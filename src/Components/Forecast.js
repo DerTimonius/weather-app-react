@@ -32,7 +32,7 @@ function Forecast({ forecastWeather }) {
             <div key={`timestamp-${day[0].dt}`} className="forecast-day">
               <h4>{getDay(day[0].dt_txt)}</h4>
               <div className="forecast-icon">
-                <img src={iconURL(day[4].weather[0].icon)} alt="Weather icon" />
+                <img src={iconURL(day[3].weather[0].icon)} alt="Weather icon" />
               </div>
               <div className="forecast-temp">
                 <h4>{temperatures(day).max} °C</h4>
