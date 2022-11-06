@@ -1,9 +1,16 @@
+@font-face {
+  font-family: 'CrimsonText';
+  src: local('CrimsonText'), url(./fonts/CrimsonText-Regular.ttf),
+    format('truetype');
+}
+
 .App {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #8ced64;
-  background: -webkit-linear-gradient(top left, #8ced64, #e88d4d);
-  background: -moz-linear-gradient(top left, #8ced64, #e88d4d);
-  background: linear-gradient(to bottom right, #8ced64, #e88d4d);
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'CrimsonText', Cambria, Cochin, Georgia, Times, 'Times New Roman',
+    serif;
+  background-image: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
   box-sizing: border-box;
 }
 
@@ -31,26 +38,32 @@ button {
   flex-direction: row;
   justify-content: space-evenly;
 }
-
-.current-container {
-  width: 360px;
+.current-container,
+.forecast-day {
+  background-image: url('https://images.unsplash.com/photo-1533497197926-c9e810dcea9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGJhY2tncm91bmQlMjB0ZXh0dXJlJTIwZGFyayUyMGJsdWV8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  background-size: auto;
+  background-repeat: no-repeat;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px steelblue;
+}
+.current-container {
+  backdrop-filter: blur(10px);
+  width: 240px;
   margin: 32px;
   padding: 16px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.15);
 }
 
 .forecast-day {
-  background: rgba(0, 0, 0, 0.15);
+  /* background: rgba(255, 255, 255, 0.6); */
+  /* background: #e2eafc; */
+  /* box-shadow: 5px 5px 5px #333333; */
   width: 160px;
   padding: 12px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* border-radius: 8px; */
   margin-bottom: 48px;
 }
 

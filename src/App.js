@@ -13,6 +13,7 @@ function App() {
   // Initialized both states with falsy values
   const [currentWeather, setCurrentWeather] = useState('');
   const [weatherForecast, setWeatherForecast] = useState('');
+  const [displayedLocation, setDisplayedLocation] = useState(location);
 
   const getCoordinates = async () => {
     const response = await fetch(
@@ -49,6 +50,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     getCoordinates().catch((err) => console.log(err));
+    setDisplayedLocation(location);
   };
 
   return (
@@ -58,7 +60,11 @@ function App() {
           <Current weather={currentWeather} className="current-component" />
         )}
         <div className="middle">
-          <h2>{location}</h2>
+          <h2>Weather forecast for {displayedLocation}</h2>
+          <br />
+          <h4>Coordinates</h4>
+          <p>{coordinates.lon}</p>
+          <p>{coordinates.lat}</p>
           <br />
           <form onSubmit={handleSubmit}>
             <input
