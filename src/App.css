@@ -8,7 +8,7 @@
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-family: 'CrimsonText', Cambria, Cochin, Georgia, Times, 'Times New Roman',
     serif;
-  background-image: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-image: url(./img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
@@ -40,8 +40,8 @@ button {
 }
 .current-container,
 .forecast-day {
-  background-image: url('https://images.unsplash.com/photo-1533497197926-c9e810dcea9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGJhY2tncm91bmQlMjB0ZXh0dXJlJTIwZGFyayUyMGJsdWV8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
-  background-size: auto;
+  background-image: url(./img/card-background.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   color: white;
   display: flex;

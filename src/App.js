@@ -62,9 +62,11 @@ function App() {
         <div className="middle">
           <h2>Weather forecast for {displayedLocation}</h2>
           <br />
-          <h4>Coordinates</h4>
-          <p>{coordinates.lon}</p>
-          <p>{coordinates.lat}</p>
+          <div style={{ color: '#ddd' }}>
+            <h4>Coordinates</h4>
+            <p>{coordinates.lon}</p>
+            <p>{coordinates.lat}</p>
+          </div>
           <br />
           <form onSubmit={handleSubmit}>
             <input
